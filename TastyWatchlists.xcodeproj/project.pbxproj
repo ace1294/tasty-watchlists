@@ -7,14 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		716AC6F05173E8F6487EEDD0 /* Pods_TastyWatchlists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A9605360F925214717F5E8 /* Pods_TastyWatchlists.framework */; };
 		961D79CB1F1D6C9B00F5846A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D79CA1F1D6C9B00F5846A /* AppDelegate.swift */; };
 		961D79CD1F1D6C9B00F5846A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D79CC1F1D6C9B00F5846A /* ViewController.swift */; };
 		961D79D01F1D6C9B00F5846A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961D79CE1F1D6C9B00F5846A /* Main.storyboard */; };
 		961D79D21F1D6C9B00F5846A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 961D79D11F1D6C9B00F5846A /* Assets.xcassets */; };
 		961D79D51F1D6C9B00F5846A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961D79D31F1D6C9B00F5846A /* LaunchScreen.storyboard */; };
+		961D79E01F1D6DA300F5846A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D79DF1F1D6DA300F5846A /* NetworkManager.swift */; };
+		961D7C0B1F1EB29300F5846A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C0A1F1EB29300F5846A /* User.swift */; };
+		961D7C0D1F1EB29900F5846A /* Watchlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C0C1F1EB29900F5846A /* Watchlist.swift */; };
+		961D7C0F1F1EB2A300F5846A /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C0E1F1EB2A300F5846A /* Symbol.swift */; };
+		961D7C111F1EFE0000F5846A /* WatchlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C101F1EFE0000F5846A /* WatchlistManager.swift */; };
+		961D7C131F1FD9BC00F5846A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C121F1FD9BC00F5846A /* UserManager.swift */; };
+		961D7C1C1F206AA400F5846A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 961D7C1B1F206AA400F5846A /* Podfile */; };
+		961D7C2D1F211E8400F5846A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C2C1F211E8400F5846A /* LoginViewController.swift */; };
+		961D7C2F1F212B8300F5846A /* FacebookLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C2E1F212B8300F5846A /* FacebookLoginManager.swift */; };
+		961D7C321F212F0900F5846A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C311F212F0900F5846A /* Constants.swift */; };
+		961D7C341F212F5200F5846A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C331F212F5200F5846A /* LaunchViewController.swift */; };
+		961D7C361F213BA100F5846A /* WatchlistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C351F213BA100F5846A /* WatchlistsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07E4CE0AA413D67B14B78E21 /* Pods-TastyWatchlists.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyWatchlists.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TastyWatchlists/Pods-TastyWatchlists.debug.xcconfig"; sourceTree = "<group>"; };
+		09A9605360F925214717F5E8 /* Pods_TastyWatchlists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyWatchlists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1655D184BB56FE8086CDB797 /* Pods-TastyWatchlists.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyWatchlists.release.xcconfig"; path = "Pods/Target Support Files/Pods-TastyWatchlists/Pods-TastyWatchlists.release.xcconfig"; sourceTree = "<group>"; };
 		961D79C71F1D6C9B00F5846A /* TastyWatchlists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TastyWatchlists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		961D79CA1F1D6C9B00F5846A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		961D79CC1F1D6C9B00F5846A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +38,18 @@
 		961D79D11F1D6C9B00F5846A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		961D79D41F1D6C9B00F5846A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		961D79D61F1D6C9B00F5846A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		961D79DF1F1D6DA300F5846A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		961D7C0A1F1EB29300F5846A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		961D7C0C1F1EB29900F5846A /* Watchlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watchlist.swift; sourceTree = "<group>"; };
+		961D7C0E1F1EB2A300F5846A /* Symbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
+		961D7C101F1EFE0000F5846A /* WatchlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistManager.swift; sourceTree = "<group>"; };
+		961D7C121F1FD9BC00F5846A /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		961D7C1B1F206AA400F5846A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		961D7C2C1F211E8400F5846A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		961D7C2E1F212B8300F5846A /* FacebookLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLoginManager.swift; sourceTree = "<group>"; };
+		961D7C311F212F0900F5846A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		961D7C331F212F5200F5846A /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		961D7C351F213BA100F5846A /* WatchlistsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +57,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				716AC6F05173E8F6487EEDD0 /* Pods_TastyWatchlists.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71AD4FB615E38BF62DB33EE4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07E4CE0AA413D67B14B78E21 /* Pods-TastyWatchlists.debug.xcconfig */,
+				1655D184BB56FE8086CDB797 /* Pods-TastyWatchlists.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		961D79BE1F1D6C9B00F5846A = {
 			isa = PBXGroup;
 			children = (
+				961D7C1B1F206AA400F5846A /* Podfile */,
 				961D79C91F1D6C9B00F5846A /* TastyWatchlists */,
+				961D7C181F20695400F5846A /* Frameworks */,
 				961D79C81F1D6C9B00F5846A /* Products */,
+				71AD4FB615E38BF62DB33EE4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +97,64 @@
 			children = (
 				961D79CA1F1D6C9B00F5846A /* AppDelegate.swift */,
 				961D79CC1F1D6C9B00F5846A /* ViewController.swift */,
+				961D79DE1F1D6D9600F5846A /* Managers */,
+				961D7C091F1EB28200F5846A /* Models */,
+				961D7C2B1F211E8400F5846A /* ViewControllers */,
+				961D7C301F212EFC00F5846A /* Utilities */,
 				961D79CE1F1D6C9B00F5846A /* Main.storyboard */,
 				961D79D11F1D6C9B00F5846A /* Assets.xcassets */,
 				961D79D31F1D6C9B00F5846A /* LaunchScreen.storyboard */,
 				961D79D61F1D6C9B00F5846A /* Info.plist */,
 			);
 			path = TastyWatchlists;
+			sourceTree = "<group>";
+		};
+		961D79DE1F1D6D9600F5846A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				961D79DF1F1D6DA300F5846A /* NetworkManager.swift */,
+				961D7C121F1FD9BC00F5846A /* UserManager.swift */,
+				961D7C101F1EFE0000F5846A /* WatchlistManager.swift */,
+				961D7C2E1F212B8300F5846A /* FacebookLoginManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		961D7C091F1EB28200F5846A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				961D7C0A1F1EB29300F5846A /* User.swift */,
+				961D7C0C1F1EB29900F5846A /* Watchlist.swift */,
+				961D7C0E1F1EB2A300F5846A /* Symbol.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		961D7C181F20695400F5846A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09A9605360F925214717F5E8 /* Pods_TastyWatchlists.framework */,
+			);
+			name = Frameworks;
+			path = TastyWatchlists/Frameworks;
+			sourceTree = "<group>";
+		};
+		961D7C2B1F211E8400F5846A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				961D7C2C1F211E8400F5846A /* LoginViewController.swift */,
+				961D7C331F212F5200F5846A /* LaunchViewController.swift */,
+				961D7C351F213BA100F5846A /* WatchlistsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		961D7C301F212EFC00F5846A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				961D7C311F212F0900F5846A /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +164,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 961D79D91F1D6C9B00F5846A /* Build configuration list for PBXNativeTarget "TastyWatchlists" */;
 			buildPhases = (
+				9425B90211E8B7E412B2F42D /* [CP] Check Pods Manifest.lock */,
 				961D79C31F1D6C9B00F5846A /* Sources */,
 				961D79C41F1D6C9B00F5846A /* Frameworks */,
 				961D79C51F1D6C9B00F5846A /* Resources */,
+				34069F4E19A321E6FBE89E1B /* [CP] Embed Pods Frameworks */,
+				088117CAB4CC8FD90068BFCD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,19 +221,79 @@
 			files = (
 				961D79D51F1D6C9B00F5846A /* LaunchScreen.storyboard in Resources */,
 				961D79D21F1D6C9B00F5846A /* Assets.xcassets in Resources */,
+				961D7C1C1F206AA400F5846A /* Podfile in Resources */,
 				961D79D01F1D6C9B00F5846A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		088117CAB4CC8FD90068BFCD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TastyWatchlists/Pods-TastyWatchlists-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34069F4E19A321E6FBE89E1B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TastyWatchlists/Pods-TastyWatchlists-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9425B90211E8B7E412B2F42D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		961D79C31F1D6C9B00F5846A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				961D7C2D1F211E8400F5846A /* LoginViewController.swift in Sources */,
+				961D7C321F212F0900F5846A /* Constants.swift in Sources */,
+				961D7C0B1F1EB29300F5846A /* User.swift in Sources */,
+				961D79E01F1D6DA300F5846A /* NetworkManager.swift in Sources */,
+				961D7C2F1F212B8300F5846A /* FacebookLoginManager.swift in Sources */,
 				961D79CD1F1D6C9B00F5846A /* ViewController.swift in Sources */,
+				961D7C0D1F1EB29900F5846A /* Watchlist.swift in Sources */,
+				961D7C341F212F5200F5846A /* LaunchViewController.swift in Sources */,
+				961D7C111F1EFE0000F5846A /* WatchlistManager.swift in Sources */,
+				961D7C361F213BA100F5846A /* WatchlistsViewController.swift in Sources */,
 				961D79CB1F1D6C9B00F5846A /* AppDelegate.swift in Sources */,
+				961D7C131F1FD9BC00F5846A /* UserManager.swift in Sources */,
+				961D7C0F1F1EB2A300F5846A /* Symbol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +416,7 @@
 		};
 		961D79DA1F1D6C9B00F5846A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07E4CE0AA413D67B14B78E21 /* Pods-TastyWatchlists.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TastyWatchlists/Info.plist;
@@ -272,6 +429,7 @@
 		};
 		961D79DB1F1D6C9B00F5846A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1655D184BB56FE8086CDB797 /* Pods-TastyWatchlists.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TastyWatchlists/Info.plist;
@@ -301,6 +459,7 @@
 				961D79DB1F1D6C9B00F5846A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
