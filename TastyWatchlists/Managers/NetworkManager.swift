@@ -15,7 +15,7 @@ public enum HTTPMethod: String {
     case delete  = "DELETE"
 }
 
-class NetworkManager {
+struct NetworkManager {
     
 //    static fileprivate let serverUrl = "http://198.199.81.13:8080/"
     static fileprivate let serverUrl = "http://localhost:8080/"
@@ -58,6 +58,48 @@ class NetworkManager {
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                     success(json)
+                }
+                else {
+                    failure()
+                }
+                
+                
+            } catch let error {
+                failure()
+                print(error.localizedDescription)
+            }
+        })
+        task.resume()
+    }
+    
+    static func requestSearch(endpoint: String, success:@escaping ([[String]]) -> Void, failure:@escaping () -> Void) {
+        guard let url = URL(string: endpoint) else {
+            failure()
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.get.rawValue
+
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        //create dataTask using the session object to send data to the server
+        let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
+            
+            guard error == nil else {
+                print ("Error \(String(describing: error))")
+                return
+            }
+            
+            guard let data = data else {
+                return
+            }
+            
+            do {
+                if let jsonArray = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String]] {
+                    success(jsonArray)
                 }
                 else {
                     failure()

@@ -10,7 +10,6 @@ import Foundation
 
 import FacebookLogin
 import FacebookCore
-import FBSDKCoreKit
 
 struct TastyProfileRequest: GraphRequestProtocol {
     struct Response: GraphResponseProtocol {
@@ -21,21 +20,19 @@ struct TastyProfileRequest: GraphRequestProtocol {
             // Decode JSON from rawResponse into other properties here.
             if let dictResponse = rawResponse as? Dictionary<String, Any> {
                 facebookUserId = dictResponse["id"] as? String
-                name = dictResponse["name"] as? String
+                name = dictResponse["first_name"] as? String
             }
         }
     }
     
-    
-    
     var graphPath = "/me"
-    var parameters: [String : Any]? = ["fields": "id, name"]
+    var parameters: [String : Any]? = ["fields": "id, first_name"]
     var accessToken = AccessToken.current
     var httpMethod: GraphRequestHTTPMethod = .GET
     var apiVersion: GraphAPIVersion = .defaultVersion
 }
 
-class FacebookLoginManager {
+struct FacebookLoginManager {
     static func login(fromViewController: UIViewController, success:@escaping (User) -> Void, failure:@escaping () -> Void) {
         let loginManager = LoginManager()
         loginManager.logIn([.publicProfile], viewController: fromViewController) { loginResult in

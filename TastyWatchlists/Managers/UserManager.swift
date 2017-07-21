@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserManager {
+struct UserManager {
     
     static fileprivate let createEndPoint = "user/"
     static fileprivate let getEndPoint = "user/%@"

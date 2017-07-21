@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationDrawerViewController" customModule="TastyWatchlists" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="FAp-Mr-SSu" id="2KI-a2-9KA"/>
+                <outlet property="userNameLabel" destination="x59-Yl-MEv" id="LyZ-Lb-QOm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FAp-Mr-SSu">
+                    <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="B1B-hl-yhR"/>
+                        <outlet property="delegate" destination="-1" id="xzw-bh-3xs"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SCM-c7-Mpw" userLabel="Header - View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x59-Yl-MEv">
+                            <rect key="frame" x="15" y="20" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pj0-TU-G48">
+                            <rect key="frame" x="308" y="20" width="52" height="30"/>
+                            <state key="normal" title="Log out"/>
+                            <connections>
+                                <action selector="didPressLogout:" destination="-1" eventType="touchUpInside" id="rEG-2j-y55"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ed-GK-1So">
+                            <rect key="frame" x="15" y="66" width="148" height="30"/>
+                            <state key="normal" title="Create New Watchlist"/>
+                            <connections>
+                                <action selector="didPressCreateWatchlist:" destination="-1" eventType="touchUpInside" id="igI-b5-cMg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="pj0-TU-G48" firstAttribute="top" secondItem="SCM-c7-Mpw" secondAttribute="top" constant="20" id="Aye-BY-KVh"/>
+                        <constraint firstItem="7Ed-GK-1So" firstAttribute="leading" secondItem="SCM-c7-Mpw" secondAttribute="leading" constant="15" id="GIV-GC-klH"/>
+                        <constraint firstAttribute="trailing" secondItem="pj0-TU-G48" secondAttribute="trailing" constant="15" id="Vk8-Dg-jdO"/>
+                        <constraint firstAttribute="height" constant="100" id="YmQ-U4-R1k"/>
+                        <constraint firstItem="x59-Yl-MEv" firstAttribute="leading" secondItem="SCM-c7-Mpw" secondAttribute="leading" constant="15" id="aph-Ze-VvG"/>
+                        <constraint firstAttribute="bottom" secondItem="7Ed-GK-1So" secondAttribute="bottom" constant="4" id="s9T-lg-uep"/>
+                        <constraint firstItem="x59-Yl-MEv" firstAttribute="top" secondItem="SCM-c7-Mpw" secondAttribute="top" constant="20" id="uld-59-Kqg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.35795717589999998" green="0.57612847219999996" blue="0.50760995369999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="FAp-Mr-SSu" secondAttribute="bottom" id="0hJ-uh-CbB"/>
+                <constraint firstItem="FAp-Mr-SSu" firstAttribute="top" secondItem="SCM-c7-Mpw" secondAttribute="bottom" id="9Ed-DZ-OK2"/>
+                <constraint firstItem="SCM-c7-Mpw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Q4K-Kd-v2e"/>
+                <constraint firstAttribute="trailing" secondItem="SCM-c7-Mpw" secondAttribute="trailing" id="RAh-iG-QaT"/>
+                <constraint firstItem="SCM-c7-Mpw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZDt-aM-Jop"/>
+                <constraint firstAttribute="trailing" secondItem="FAp-Mr-SSu" secondAttribute="trailing" id="fG3-4s-dAb"/>
+                <constraint firstItem="FAp-Mr-SSu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hTT-tI-LBK"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

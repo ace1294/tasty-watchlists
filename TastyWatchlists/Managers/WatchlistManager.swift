@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WatchlistManager {
+struct WatchlistManager {
     
     static fileprivate let createListEndPoint = "user/%@/watchlist"
     static fileprivate let deleteListEndPoint = "user/%@/watchlist/%@"
@@ -50,7 +50,7 @@ class WatchlistManager {
         }, failure: failure)
     }
     
-    static func addSymbolToWatchlist(_ symbol: Symbol, watchlist: Watchlist, forUser: User, success:@escaping (User) -> Void, failure:@escaping () -> Void ) {
+    static func addSymbolToWatchlist(_ symbol: Symbol, watchlist: Watchlist, forUser: User, success:@escaping (User, Watchlist) -> Void, failure:@escaping () -> Void ) {
         
         guard let userServerId = forUser.serverId else {
             failure()
@@ -66,11 +66,20 @@ class WatchlistManager {
         
         NetworkManager.request(endpoint: endPoint, method: .post, params: symbol.toDictionary(), success: { response in
             let userWithSymbol = User(dictionary: response)
-            success(userWithSymbol)
+            if let lists = userWithSymbol.watchlists {
+                for list in lists {
+                    if watchlist.serverId == list.serverId {
+                        success(userWithSymbol, list)
+                        return
+                    }
+                }
+            }
+            
+            
         }, failure: failure)
     }
     
-    static func deleteSymbolFromWatchlist(_ symbol: Symbol, watchlist: Watchlist, forUser: User, success:@escaping (User) -> Void, failure:@escaping () -> Void ) {
+    static func deleteSymbolFromWatchlist(_ symbol: Symbol, watchlist: Watchlist, forUser: User, success:@escaping (User, Watchlist) -> Void, failure:@escaping () -> Void ) {
         
         guard let userServerId = forUser.serverId else {
             failure()
@@ -91,7 +100,14 @@ class WatchlistManager {
         
         NetworkManager.request(endpoint: endPoint, method: .delete, params: nil, success: { response in
             let userWithoutSymbol = User(dictionary: response)
-            success(userWithoutSymbol)
+            if let lists = userWithoutSymbol.watchlists {
+                for list in lists {
+                    if watchlist.serverId == list.serverId {
+                        success(userWithoutSymbol, list)
+                        return
+                    }
+                }
+            }
         }, failure: failure)
     }
 }

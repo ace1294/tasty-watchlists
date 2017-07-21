@@ -11,6 +11,7 @@ import Foundation
 struct Segues {
     static let showWatchlists = "ShowWatchlists"
     static let showLogin = "ShowLogin"
+    static let showSearch = "ShowSearch"
 }
 
 struct UserDefaultKeys {

@@ -13,10 +13,11 @@ import FacebookCore
 
 class LoginViewController: UIViewController {
 
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print ("Login View Controller ViewDidLoad")
     }
     
     @IBAction func didPressLoginToFacebook(_ sender: UIButton) {
@@ -27,11 +28,13 @@ class LoginViewController: UIViewController {
             
             UserManager.getUserWithFacebookId(facebookId, success: { completeUser in
                 UserPersistence.storedUserId = completeUser.serverId
+                self.user = completeUser
                 self.transitionToWatchlist()
             }, failure: {
                 print ("Failed get user with facebook id")
                 UserManager.createUser(user, success: { completeNewUser in
                     UserPersistence.storedUserId = completeNewUser.serverId
+                    self.user = completeNewUser
                     self.transitionToWatchlist()
                 }, failure: { 
                     print ("failed to create")
@@ -47,6 +50,17 @@ class LoginViewController: UIViewController {
     func transitionToWatchlist() {
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: Segues.showWatchlists, sender: nil)
+        }
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.showWatchlists {
+            if let navController = segue.destination as? UINavigationController, let watchlistVC = navController.topViewController as? WatchlistsViewController {
+                watchlistVC.currentUser = self.user
+                
+            }
         }
     }
 

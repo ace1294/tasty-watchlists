@@ -30,7 +30,7 @@ class ViewController: UIViewController {
 //                self.createSymbol(watchlist: firstList, user: user)
 //            }
             
-            self.createWatchlist(user: user)
+//            self.createWatchlist(user: user)
             
             
             
@@ -56,14 +56,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func createWatchlist (user: User) {
-        let watchlist = Watchlist(name: "Boring Stocks")
-        WatchlistManager.createWatchlist(watchlist, forUser: user, success: { newUser in
-            print ("Success \(newUser.toDictionary())")
-        }) {
-            print ("Failure")
-        }
-    }
+    
     
     func deleteWatchlist (watchlist: Watchlist, user: User) {
         print ("deleteWatchlist()")
@@ -76,26 +69,6 @@ class ViewController: UIViewController {
         
     }
     
-    func createSymbol (watchlist: Watchlist, user: User) {
-        print ("createSymbol()")
-        let symbol =  Symbol(name: "HD")
-        
-        WatchlistManager.addSymbolToWatchlist(symbol, watchlist: watchlist, forUser: user, success: { newUser in
-            print ("Successfully created symbol \(newUser.toDictionary())")
-        }) { 
-            print ("Failure in creating symbol")
-        }
-    }
-    
-    func deleteSymbol (symbol: Symbol, watchlist: Watchlist, user: User) {
-        print ("deleteSymbol()")
-        WatchlistManager.deleteSymbolFromWatchlist(symbol, watchlist: watchlist, forUser: user, success: { newUser in
-            print ("Successfully deleted list \(newUser.toDictionary())")
-        }) {
-            print ("Failure in creating symbol")
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

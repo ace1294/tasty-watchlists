@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User {
+struct User {
     let serverId: String?
     let name: String?
     let facebookUserId: String?

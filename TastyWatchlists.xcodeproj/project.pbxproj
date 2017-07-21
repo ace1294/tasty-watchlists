@@ -25,6 +25,12 @@
 		961D7C321F212F0900F5846A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C311F212F0900F5846A /* Constants.swift */; };
 		961D7C341F212F5200F5846A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C331F212F5200F5846A /* LaunchViewController.swift */; };
 		961D7C361F213BA100F5846A /* WatchlistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C351F213BA100F5846A /* WatchlistsViewController.swift */; };
+		961D7C411F215E4A00F5846A /* NavigationDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C3F1F215E4A00F5846A /* NavigationDrawerViewController.swift */; };
+		961D7C421F215E4A00F5846A /* NavigationDrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961D7C401F215E4A00F5846A /* NavigationDrawerViewController.xib */; };
+		961D7C441F217A1400F5846A /* SymbolSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C431F217A1400F5846A /* SymbolSearchViewController.swift */; };
+		961D7C481F217A9700F5846A /* TastySymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C471F217A9700F5846A /* TastySymbol.swift */; };
+		961D7C4A1F217B7000F5846A /* TastySymbolSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C491F217B7000F5846A /* TastySymbolSearch.swift */; };
+		961D7C4C1F2199F500F5846A /* SymbolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C4B1F2199F500F5846A /* SymbolViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +56,12 @@
 		961D7C311F212F0900F5846A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		961D7C331F212F5200F5846A /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		961D7C351F213BA100F5846A /* WatchlistsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistsViewController.swift; sourceTree = "<group>"; };
+		961D7C3F1F215E4A00F5846A /* NavigationDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDrawerViewController.swift; sourceTree = "<group>"; };
+		961D7C401F215E4A00F5846A /* NavigationDrawerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationDrawerViewController.xib; sourceTree = "<group>"; };
+		961D7C431F217A1400F5846A /* SymbolSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolSearchViewController.swift; sourceTree = "<group>"; };
+		961D7C471F217A9700F5846A /* TastySymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TastySymbol.swift; sourceTree = "<group>"; };
+		961D7C491F217B7000F5846A /* TastySymbolSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TastySymbolSearch.swift; sourceTree = "<group>"; };
+		961D7C4B1F2199F500F5846A /* SymbolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +128,7 @@
 				961D7C121F1FD9BC00F5846A /* UserManager.swift */,
 				961D7C101F1EFE0000F5846A /* WatchlistManager.swift */,
 				961D7C2E1F212B8300F5846A /* FacebookLoginManager.swift */,
+				961D7C491F217B7000F5846A /* TastySymbolSearch.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -126,6 +139,7 @@
 				961D7C0A1F1EB29300F5846A /* User.swift */,
 				961D7C0C1F1EB29900F5846A /* Watchlist.swift */,
 				961D7C0E1F1EB2A300F5846A /* Symbol.swift */,
+				961D7C471F217A9700F5846A /* TastySymbol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -145,6 +159,10 @@
 				961D7C2C1F211E8400F5846A /* LoginViewController.swift */,
 				961D7C331F212F5200F5846A /* LaunchViewController.swift */,
 				961D7C351F213BA100F5846A /* WatchlistsViewController.swift */,
+				961D7C3F1F215E4A00F5846A /* NavigationDrawerViewController.swift */,
+				961D7C401F215E4A00F5846A /* NavigationDrawerViewController.xib */,
+				961D7C431F217A1400F5846A /* SymbolSearchViewController.swift */,
+				961D7C4B1F2199F500F5846A /* SymbolViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -221,6 +239,7 @@
 			files = (
 				961D79D51F1D6C9B00F5846A /* LaunchScreen.storyboard in Resources */,
 				961D79D21F1D6C9B00F5846A /* Assets.xcassets in Resources */,
+				961D7C421F215E4A00F5846A /* NavigationDrawerViewController.xib in Resources */,
 				961D7C1C1F206AA400F5846A /* Podfile in Resources */,
 				961D79D01F1D6C9B00F5846A /* Main.storyboard in Resources */,
 			);
@@ -281,15 +300,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				961D7C441F217A1400F5846A /* SymbolSearchViewController.swift in Sources */,
 				961D7C2D1F211E8400F5846A /* LoginViewController.swift in Sources */,
+				961D7C4C1F2199F500F5846A /* SymbolViewController.swift in Sources */,
 				961D7C321F212F0900F5846A /* Constants.swift in Sources */,
 				961D7C0B1F1EB29300F5846A /* User.swift in Sources */,
 				961D79E01F1D6DA300F5846A /* NetworkManager.swift in Sources */,
 				961D7C2F1F212B8300F5846A /* FacebookLoginManager.swift in Sources */,
+				961D7C411F215E4A00F5846A /* NavigationDrawerViewController.swift in Sources */,
+				961D7C481F217A9700F5846A /* TastySymbol.swift in Sources */,
 				961D79CD1F1D6C9B00F5846A /* ViewController.swift in Sources */,
 				961D7C0D1F1EB29900F5846A /* Watchlist.swift in Sources */,
 				961D7C341F212F5200F5846A /* LaunchViewController.swift in Sources */,
 				961D7C111F1EFE0000F5846A /* WatchlistManager.swift in Sources */,
+				961D7C4A1F217B7000F5846A /* TastySymbolSearch.swift in Sources */,
 				961D7C361F213BA100F5846A /* WatchlistsViewController.swift in Sources */,
 				961D79CB1F1D6C9B00F5846A /* AppDelegate.swift in Sources */,
 				961D7C131F1FD9BC00F5846A /* UserManager.swift in Sources */,

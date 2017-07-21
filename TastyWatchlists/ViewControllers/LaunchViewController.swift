@@ -10,12 +10,15 @@ import UIKit
 
 class LaunchViewController: UIViewController {
 
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let storedUserId = UserPersistence.storedUserId {
-            UserManager.getUserWithServerId(storedUserId, success: { completeUser in
-                UserPersistence.storedUserId = completeUser.serverId
+            UserManager.getUserWithServerId(storedUserId, success: { user in
+                UserPersistence.storedUserId = user.serverId
+                self.user = user
                 self.transitionToWatchlist()
             }, failure: {
                 self.transitionToLogin()
@@ -37,6 +40,17 @@ class LaunchViewController: UIViewController {
     func transitionToLogin() {
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: Segues.showLogin, sender: nil)
+        }
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.showWatchlists {
+            if let navController = segue.destination as? UINavigationController, let watchlistVC = navController.topViewController as? WatchlistsViewController {
+                watchlistVC.currentUser = self.user
+                
+            }
         }
     }
 
