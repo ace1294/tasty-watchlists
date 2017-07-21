@@ -24,7 +24,7 @@ struct WatchlistManager {
         
         let endPoint = String(format: WatchlistManager.createListEndPoint, userServerId)
         
-        NetworkManager.request(endpoint: endPoint, method: .post, params: watchlist.toDictionary(), success: { response in
+        NetworkManager.requestServer(endpoint: endPoint, method: .post, params: watchlist.toDictionary(), success: { response in
             let userWithWatchlist = User(dictionary: response)
             success(userWithWatchlist)
         }, failure: failure)
@@ -44,7 +44,7 @@ struct WatchlistManager {
         
         let endPoint = String(format: WatchlistManager.deleteListEndPoint, userServerId, watchlistServerUserId)
         
-        NetworkManager.request(endpoint: endPoint, method: .delete, params: nil, success: { response in
+        NetworkManager.requestServer(endpoint: endPoint, method: .delete, params: nil, success: { response in
             let userWithoutList = User(dictionary: response)
             success(userWithoutList)
         }, failure: failure)
@@ -64,7 +64,7 @@ struct WatchlistManager {
         
         let endPoint = String(format: WatchlistManager.createSymbolEndPoint, userServerId, watchlistServerUserId)
         
-        NetworkManager.request(endpoint: endPoint, method: .post, params: symbol.toDictionary(), success: { response in
+        NetworkManager.requestServer(endpoint: endPoint, method: .post, params: symbol.toDictionary(), success: { response in
             let userWithSymbol = User(dictionary: response)
             if let lists = userWithSymbol.watchlists {
                 for list in lists {
@@ -98,7 +98,7 @@ struct WatchlistManager {
         
         let endPoint = String(format: WatchlistManager.deleteSymbolEndPoint, userServerId, watchlistServerUserId, symbolServerUserId)
         
-        NetworkManager.request(endpoint: endPoint, method: .delete, params: nil, success: { response in
+        NetworkManager.requestServer(endpoint: endPoint, method: .delete, params: nil, success: { response in
             let userWithoutSymbol = User(dictionary: response)
             if let lists = userWithoutSymbol.watchlists {
                 for list in lists {

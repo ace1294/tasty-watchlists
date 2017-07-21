@@ -12,6 +12,7 @@ struct Segues {
     static let showWatchlists = "ShowWatchlists"
     static let showLogin = "ShowLogin"
     static let showSearch = "ShowSearch"
+    static let showSymbol = "ShowSymbol"
 }
 
 struct UserDefaultKeys {

@@ -12,6 +12,7 @@ struct Watchlist {
     var serverId: String?
     let name: String?
     var symbols: [Symbol]?
+    var lastSymbolQuoteUpdate: Date?
     
     static fileprivate let serverIdKey = "id"
     static fileprivate let nameKey = "name"
@@ -50,6 +51,11 @@ struct Watchlist {
         }
         
         return dict
+    }
+    
+    mutating func updateSymbolsWithQuotes(_ symbolsWithQuotes: [Symbol]) {
+        symbols = symbolsWithQuotes
+        lastSymbolQuoteUpdate = Date()
     }
     
     static func getWatchlists(watchlistDicts: [Dictionary<String, Any>]) -> [Watchlist] {

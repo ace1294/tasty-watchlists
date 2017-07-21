@@ -56,6 +56,12 @@ class SymbolSearchViewController: UIViewController , UITableViewDelegate, UITabl
             
         })
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func didPressCancelButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
 

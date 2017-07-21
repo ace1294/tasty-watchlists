@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		716AC6F05173E8F6487EEDD0 /* Pods_TastyWatchlists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A9605360F925214717F5E8 /* Pods_TastyWatchlists.framework */; };
 		961D79CB1F1D6C9B00F5846A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D79CA1F1D6C9B00F5846A /* AppDelegate.swift */; };
-		961D79CD1F1D6C9B00F5846A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D79CC1F1D6C9B00F5846A /* ViewController.swift */; };
 		961D79D01F1D6C9B00F5846A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961D79CE1F1D6C9B00F5846A /* Main.storyboard */; };
 		961D79D21F1D6C9B00F5846A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 961D79D11F1D6C9B00F5846A /* Assets.xcassets */; };
 		961D79D51F1D6C9B00F5846A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961D79D31F1D6C9B00F5846A /* LaunchScreen.storyboard */; };
@@ -31,6 +30,10 @@
 		961D7C481F217A9700F5846A /* TastySymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C471F217A9700F5846A /* TastySymbol.swift */; };
 		961D7C4A1F217B7000F5846A /* TastySymbolSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C491F217B7000F5846A /* TastySymbolSearch.swift */; };
 		961D7C4C1F2199F500F5846A /* SymbolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C4B1F2199F500F5846A /* SymbolViewController.swift */; };
+		961D7C4E1F21A7DE00F5846A /* StockQuoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C4D1F21A7DE00F5846A /* StockQuoteManager.swift */; };
+		961D7C521F21B91700F5846A /* SymbolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C501F21B91700F5846A /* SymbolCell.swift */; };
+		961D7C531F21B91700F5846A /* SymbolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961D7C511F21B91700F5846A /* SymbolCell.xib */; };
+		961D7C551F2266EB00F5846A /* StockPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D7C541F2266EB00F5846A /* StockPrice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +42,6 @@
 		1655D184BB56FE8086CDB797 /* Pods-TastyWatchlists.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyWatchlists.release.xcconfig"; path = "Pods/Target Support Files/Pods-TastyWatchlists/Pods-TastyWatchlists.release.xcconfig"; sourceTree = "<group>"; };
 		961D79C71F1D6C9B00F5846A /* TastyWatchlists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TastyWatchlists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		961D79CA1F1D6C9B00F5846A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		961D79CC1F1D6C9B00F5846A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		961D79CF1F1D6C9B00F5846A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		961D79D11F1D6C9B00F5846A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		961D79D41F1D6C9B00F5846A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +64,10 @@
 		961D7C471F217A9700F5846A /* TastySymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TastySymbol.swift; sourceTree = "<group>"; };
 		961D7C491F217B7000F5846A /* TastySymbolSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TastySymbolSearch.swift; sourceTree = "<group>"; };
 		961D7C4B1F2199F500F5846A /* SymbolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolViewController.swift; sourceTree = "<group>"; };
+		961D7C4D1F21A7DE00F5846A /* StockQuoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockQuoteManager.swift; sourceTree = "<group>"; };
+		961D7C501F21B91700F5846A /* SymbolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolCell.swift; sourceTree = "<group>"; };
+		961D7C511F21B91700F5846A /* SymbolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SymbolCell.xib; sourceTree = "<group>"; };
+		961D7C541F2266EB00F5846A /* StockPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockPrice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				961D79CA1F1D6C9B00F5846A /* AppDelegate.swift */,
-				961D79CC1F1D6C9B00F5846A /* ViewController.swift */,
+				961D7C4F1F21B8FF00F5846A /* Cells */,
 				961D79DE1F1D6D9600F5846A /* Managers */,
 				961D7C091F1EB28200F5846A /* Models */,
 				961D7C2B1F211E8400F5846A /* ViewControllers */,
@@ -129,6 +135,7 @@
 				961D7C101F1EFE0000F5846A /* WatchlistManager.swift */,
 				961D7C2E1F212B8300F5846A /* FacebookLoginManager.swift */,
 				961D7C491F217B7000F5846A /* TastySymbolSearch.swift */,
+				961D7C4D1F21A7DE00F5846A /* StockQuoteManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -140,6 +147,7 @@
 				961D7C0C1F1EB29900F5846A /* Watchlist.swift */,
 				961D7C0E1F1EB2A300F5846A /* Symbol.swift */,
 				961D7C471F217A9700F5846A /* TastySymbol.swift */,
+				961D7C541F2266EB00F5846A /* StockPrice.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,6 +181,15 @@
 				961D7C311F212F0900F5846A /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		961D7C4F1F21B8FF00F5846A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				961D7C501F21B91700F5846A /* SymbolCell.swift */,
+				961D7C511F21B91700F5846A /* SymbolCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +259,7 @@
 				961D7C421F215E4A00F5846A /* NavigationDrawerViewController.xib in Resources */,
 				961D7C1C1F206AA400F5846A /* Podfile in Resources */,
 				961D79D01F1D6C9B00F5846A /* Main.storyboard in Resources */,
+				961D7C531F21B91700F5846A /* SymbolCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +320,7 @@
 			files = (
 				961D7C441F217A1400F5846A /* SymbolSearchViewController.swift in Sources */,
 				961D7C2D1F211E8400F5846A /* LoginViewController.swift in Sources */,
+				961D7C551F2266EB00F5846A /* StockPrice.swift in Sources */,
 				961D7C4C1F2199F500F5846A /* SymbolViewController.swift in Sources */,
 				961D7C321F212F0900F5846A /* Constants.swift in Sources */,
 				961D7C0B1F1EB29300F5846A /* User.swift in Sources */,
@@ -309,11 +328,12 @@
 				961D7C2F1F212B8300F5846A /* FacebookLoginManager.swift in Sources */,
 				961D7C411F215E4A00F5846A /* NavigationDrawerViewController.swift in Sources */,
 				961D7C481F217A9700F5846A /* TastySymbol.swift in Sources */,
-				961D79CD1F1D6C9B00F5846A /* ViewController.swift in Sources */,
 				961D7C0D1F1EB29900F5846A /* Watchlist.swift in Sources */,
+				961D7C4E1F21A7DE00F5846A /* StockQuoteManager.swift in Sources */,
 				961D7C341F212F5200F5846A /* LaunchViewController.swift in Sources */,
 				961D7C111F1EFE0000F5846A /* WatchlistManager.swift in Sources */,
 				961D7C4A1F217B7000F5846A /* TastySymbolSearch.swift in Sources */,
+				961D7C521F21B91700F5846A /* SymbolCell.swift in Sources */,
 				961D7C361F213BA100F5846A /* WatchlistsViewController.swift in Sources */,
 				961D79CB1F1D6C9B00F5846A /* AppDelegate.swift in Sources */,
 				961D7C131F1FD9BC00F5846A /* UserManager.swift in Sources */,

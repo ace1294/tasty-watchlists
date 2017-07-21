@@ -5,6 +5,10 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - Charts (3.0.2):
+    - Charts/Core (= 3.0.2)
+  - Charts/Core (3.0.2)
+  - CSV.swift (2.0.1)
   - FacebookCore (0.2.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.15)
@@ -17,21 +21,22 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.24.0):
     - FBSDKCoreKit
-  - SlideMenuControllerSwift (3.0.1)
 
 DEPENDENCIES:
+  - Charts
+  - CSV.swift (~> 2.0)
   - FacebookCore
   - FacebookLogin
-  - SlideMenuControllerSwift
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  CSV.swift: b3b6390c1674982fd0086e96939360094dcdd402
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FBSDKCoreKit: f8c9eb0dd34a9cd277c7b60da4b32226d142502d
   FBSDKLoginKit: 1214c6d5a1c4995b694d8db8a9ba6910c6028acf
-  SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
 
-PODFILE CHECKSUM: eb17c108af99a649afd10bff8e711cfdb582531e
+PODFILE CHECKSUM: 229f0ed2aeb5b2c4c06b724501458151df9593ea
 
 COCOAPODS: 1.2.0

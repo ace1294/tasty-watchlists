@@ -20,14 +20,15 @@ class WatchlistsViewController: UITableViewController {
     var selectedWatchlist: Watchlist? {
         didSet {
             reloadData()
+            getStockQuotes()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        tableView.register(UINib(nibName: "ActivityCell", bundle:nil), forCellReuseIdentifier: "ActivityCell")
-        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "ID")
+        tableView.register(UINib(nibName: SymbolCell.nibName, bundle:nil), forCellReuseIdentifier: SymbolCell.reuseIdentifier)
+        tableView.estimatedRowHeight = SymbolCell.cellHeight
         
         navigationDrawerController = NavigationDrawerViewController()
         if let navDrawer = navigationDrawerController {
@@ -66,7 +67,7 @@ class WatchlistsViewController: UITableViewController {
     
     @IBAction func didPressDeleteButton(_ sender: UIButton) {
         if let list = selectedWatchlist, let name = list.name, let user = currentUser {
-            let alert = UIAlertController(title: "Deleting Watchlist", message: "Are you sure youw ant to delete \(name) watchlist?", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Deleting Watchlist", message: "Are you sure you want to delete \(name) watchlist?", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
                 self.deleteWatchlist(watchlist: list, user: user, success: { userWithoutList in
@@ -87,6 +88,16 @@ class WatchlistsViewController: UITableViewController {
         if segue.identifier == Segues.showSearch, let searchVC = segue.destination as? SymbolSearchViewController {
             searchVC.delegate = self
         }
+        else if segue.identifier == Segues.showSymbol, let symbolVC = segue.destination as? SymbolViewController {
+            if let symbols = selectedWatchlist?.symbols {
+                let index = tableView.indexPathForSelectedRow
+                let selectedSymbol = symbols[(index?.row)!]
+                symbolVC.symbol = selectedSymbol
+            }
+        }
+        
+        
+        
     }
 
 }
@@ -94,8 +105,14 @@ class WatchlistsViewController: UITableViewController {
 // MARK: - TableViewDelegate
 
 extension WatchlistsViewController {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return SymbolCell.cellHeight
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: Segues.showSymbol, sender: nil)
+        }
     }
 }
 
@@ -103,6 +120,7 @@ extension WatchlistsViewController {
 //MARK: - TableViewDataSource
 
 extension WatchlistsViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let symbols = selectedWatchlist?.symbols {
             return symbols.count
@@ -113,10 +131,12 @@ extension WatchlistsViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ID", for: indexPath) as UITableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SymbolCell.reuseIdentifier, for: indexPath) as? SymbolCell else {
+            return UITableViewCell()
+        }
         
-        if let symbols = selectedWatchlist?.symbols, let name = symbols[indexPath.row].name{
-            cell.textLabel?.text = name
+        if let symbols = selectedWatchlist?.symbols {
+            cell.configureForSymbol(symbols[indexPath.row])
         }
         
         return cell
@@ -201,7 +221,8 @@ extension WatchlistsViewController: NavigationDrawerDelegate {
     }
     
     func didSelectLogout(_ drawer: NavigationDrawerViewController) {
-        
+        UserPersistence.storedUserId = ""
+        performSegue(withIdentifier: Segues.showLogin, sender: nil)
     }
 }
 
@@ -218,17 +239,15 @@ extension WatchlistsViewController {
             }
             
         }) {
-            print ("Failure")
+            print ("Failed Creating Watchlist")
         }
     }
     
     func deleteWatchlist(watchlist: Watchlist, user: User, success:@escaping (User) -> Void) {
-        print ("deleteWatchlist()")
-        
         WatchlistManager.deleteWatchlist(watchlist, forUser: user, success: { userWithoutList in
             success(userWithoutList)
         }) {
-            print ("failure deleting list")
+            print ("Failed Deleting Watchlist")
         }
         
     }
@@ -239,7 +258,7 @@ extension WatchlistsViewController {
         WatchlistManager.addSymbolToWatchlist(symbol, watchlist: watchlist, forUser: user, success: { user, watchlistWithSymbol in
             success(user, watchlistWithSymbol)
         }) {
-            print ("Failure in creating symbol")
+            print ("Failed Deleting Symbol")
         }
     }
     
@@ -247,7 +266,24 @@ extension WatchlistsViewController {
         WatchlistManager.deleteSymbolFromWatchlist(symbol, watchlist: watchlist, forUser: user, success: { user, watchlistWithoutSymbol in
             success(user, watchlistWithoutSymbol)
         }) {
-            print ("Failure in Deleting symbol")
+            print ("Failed Deleting Symbol")
+        }
+    }
+    
+    func getStockQuotes() {
+        // If less than 60 seconds have past don't update
+        if let lastUpdate = selectedWatchlist?.lastSymbolQuoteUpdate {
+            if (lastUpdate.timeIntervalSinceNow > TimeInterval(-60.0)) { return }
+        }
+        
+        guard let symbols = selectedWatchlist?.symbols else {
+            return
+        }
+        StockQuoteManager.getStockQuotesForSymboles(symbols, success: { symbolsWithQuotes in
+            self.selectedWatchlist?.updateSymbolsWithQuotes(symbolsWithQuotes)
+            self.reloadData()
+        }) {
+            //
         }
     }
     

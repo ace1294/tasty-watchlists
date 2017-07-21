@@ -12,6 +12,11 @@ struct Symbol {
     var serverId: String?
     let name: String?
     
+    // Quote Data
+    var bidPrice: String?
+    var askPrice: String?
+    var lastPrice: String?
+    
     static fileprivate let serverIdKey = "id"
     static fileprivate let nameKey = "name"
     
@@ -30,6 +35,14 @@ struct Symbol {
             serverId = nil
         }
         name = dictionary[Symbol.nameKey] as? String
+    }
+    
+    init (serverId sid: String, name n: String, bidPrice bp: String, askPrice ap: String, lastPrice lp: String) {
+        serverId = sid
+        name = n
+        bidPrice = bp
+        askPrice = ap
+        lastPrice = lp
     }
     
     func toDictionary() -> [String: Any] {
@@ -57,5 +70,11 @@ struct Symbol {
         }
         
         return symbolDictionaries
+    }
+}
+
+extension Symbol: Equatable {
+    static func ==(lhs: Symbol, rhs: Symbol) -> Bool {
+        return lhs.serverId == rhs.serverId
     }
 }

@@ -17,7 +17,7 @@ struct UserManager {
     static func createUser(_ newUser: User, success:@escaping (User) -> Void, failure:@escaping () -> Void ) {
         let endPoint = UserManager.createEndPoint
         
-        NetworkManager.request(endpoint: endPoint, method: .post, params: newUser.toDictionary(), success: { response in
+        NetworkManager.requestServer(endpoint: endPoint, method: .post, params: newUser.toDictionary(), success: { response in
             let newUser = User(dictionary: response)
             success(newUser)
         }, failure: failure)
@@ -29,7 +29,7 @@ struct UserManager {
     static func getUserWithFacebookId(_ facebookUserId: String, success:@escaping (User) -> Void, failure:@escaping () -> Void ) {
         let endPoint = String(format: UserManager.userWithFacebookIdEndPoint, facebookUserId)
         
-        NetworkManager.request(endpoint: endPoint, method: .get, params: nil, success: { response in
+        NetworkManager.requestServer(endpoint: endPoint, method: .get, params: nil, success: { response in
             let user = User(dictionary: response)
             success(user)
         }, failure: failure)
@@ -41,7 +41,7 @@ struct UserManager {
     static func getUserWithServerId(_ serverUserID: String, success:@escaping (User) -> Void, failure:@escaping () -> Void ) {
         let endPoint = String(format: UserManager.getEndPoint, serverUserID)
         
-        NetworkManager.request(endpoint: endPoint, method: .get, params: nil, success: { response in
+        NetworkManager.requestServer(endpoint: endPoint, method: .get, params: nil, success: { response in
             let user = User(dictionary: response)
             success(user)
         }, failure: failure)

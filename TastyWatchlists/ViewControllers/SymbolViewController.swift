@@ -7,29 +7,96 @@
 //
 
 import UIKit
+import Charts
 
 class SymbolViewController: UIViewController {
+    
+    var symbol: Symbol!
+    
+    @IBOutlet weak var barView: BarChartView!
+    weak var axisFormatDelegate: IAxisValueFormatter?
+    
+    @IBOutlet weak var symbolNameLabel: UILabel!
+    @IBOutlet weak var bidPriceLabel: UILabel!
+    @IBOutlet weak var askPricelabel: UILabel!
+    @IBOutlet weak var lastPriceLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        guard symbol != nil else {
+            self.navigationController?.popViewController(animated: true)
+            return
+        }
+        
+        axisFormatDelegate = self
+        
+        StockQuoteManager.getThirdDayHistoryForSymbol(symbol, success: { symbolWithHistory in
+            self.updateChartWithStockPrices(symbolWithHistory)
+        }) { 
+            //
+        }
+        
+        let priceTimer = Timer(timeInterval: 5.0, target: self, selector: #selector(getSymbolPrices(_:)), userInfo: nil, repeats: true)
+        priceTimer.fire()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    fileprivate func updateChartWithStockPrices(_ stockPrices: [StockPrice]) {
+        var dataEntries = [BarChartDataEntry]()
+        
+        for price in stockPrices {
+            let timeIntervalForDate: TimeInterval = price.date.timeIntervalSince1970
+            let dataEntry = BarChartDataEntry(x: Double(timeIntervalForDate), y: price.price)
+            dataEntries.append(dataEntry)
+        }
+        
+        DispatchQueue.main.async {
+            let chartDataSet = BarChartDataSet(values: dataEntries, label: "Stock Price")
+            let chartData = BarChartData(dataSet: chartDataSet)
+            self.barView.data = chartData
+            
+            let xAxis = self.barView.xAxis
+            xAxis.valueFormatter = self.axisFormatDelegate
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    fileprivate func updatePriceValues() {
+        if let name = symbol.name {
+            symbolNameLabel.text = name
+        }
+        
+        if let bidPrice = symbol.bidPrice {
+            bidPriceLabel.text = bidPrice
+        }
+        
+        if let askPrice = symbol.askPrice {
+            askPricelabel.text = askPrice
+        }
+        
+        if let lastPrice = symbol.lastPrice {
+            lastPriceLabel.text = lastPrice
+        }
     }
-    */
+    
+    func getSymbolPrices(_ timer: Timer) {
+        if (!timer.isValid) {
+            return
+        }
+        
+        StockQuoteManager.getStockQuotesForSymboles([symbol], success: { symbolsWithQuotes in
+            self.symbol = symbolsWithQuotes.first
+            self.updatePriceValues()
+        }) {
+            //
+        }
+    }
 
+}
+
+extension SymbolViewController: IAxisValueFormatter {
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd"
+        return dateFormatter.string(from: Date(timeIntervalSince1970: value))
+    }
 }
