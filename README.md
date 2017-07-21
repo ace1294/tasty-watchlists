@@ -1,4 +1,4 @@
-# tasty-watchlists for coding challenege
+# tasty-watchlists for coding challenge
 
 iOS App built in Swift 3 using Facebook login to create user profiles with watchlists and symbols.
 
