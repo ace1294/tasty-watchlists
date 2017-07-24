@@ -222,6 +222,7 @@ extension WatchlistsViewController: NavigationDrawerDelegate {
     
     func didSelectLogout(_ drawer: NavigationDrawerViewController) {
         UserPersistence.storedUserId = ""
+        FacebookLoginManager.logout()
         performSegue(withIdentifier: Segues.showLogin, sender: nil)
     }
 }

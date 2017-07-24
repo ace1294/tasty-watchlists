@@ -25,30 +25,30 @@ class LoginViewController: UIViewController {
             guard let facebookId = user.facebookUserId else {
                 return
             }
-            
             UserManager.getUserWithFacebookId(facebookId, success: { completeUser in
                 UserPersistence.storedUserId = completeUser.serverId
                 self.user = completeUser
                 self.transitionToWatchlist()
             }, failure: {
-                print ("Failed get user with facebook id")
                 UserManager.createUser(user, success: { completeNewUser in
                     UserPersistence.storedUserId = completeNewUser.serverId
                     self.user = completeNewUser
                     self.transitionToWatchlist()
                 }, failure: { 
-                    print ("failed to create")
+                    print ("Failed to create User")
                 })
             })
         }, failure: {
-            //
+            print ("Failed facebook login")
         })
     }
     
     //MARK: Transitions
     
     func transitionToWatchlist() {
+        print ("Trying to transitioning to watchlsit")
         DispatchQueue.main.async {
+            print ("transitioning to watchlsit")
             self.performSegue(withIdentifier: Segues.showWatchlists, sender: nil)
         }
     }

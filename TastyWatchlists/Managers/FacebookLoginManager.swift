@@ -38,9 +38,11 @@ struct FacebookLoginManager {
         loginManager.logIn([.publicProfile], viewController: fromViewController) { loginResult in
             switch loginResult {
             case .failed(let error):
-                print(error)
+                print("Failed facebook login \(error)")
+                failure()
             case .cancelled:
                 print("User cancelled facebook login.")
+                failure()
             case .success(grantedPermissions: _, declinedPermissions: _, token: _):
                 
                 let connection = GraphRequestConnection()
@@ -62,5 +64,9 @@ struct FacebookLoginManager {
                 connection.start()
             }
         }
+    }
+    
+    static func logout() {
+        LoginManager().logOut()
     }
 }

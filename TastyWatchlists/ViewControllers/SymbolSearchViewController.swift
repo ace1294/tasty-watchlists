@@ -29,18 +29,17 @@ class SymbolSearchViewController: UIViewController , UITableViewDelegate, UITabl
 
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "ID")
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        searchTextField.becomeFirstResponder()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    func fireDelayedSearch(_ timer: Timer) {
-        if (!timer.isValid) {
-            return
-        }
-        
+    func fireSearch() {
         if let string = searchString, string.characters.count > 0 {
             searchText(string)
         }
@@ -70,11 +69,8 @@ extension SymbolSearchViewController: UITextFieldDelegate {
         // Thanks apple for making Range
         let nsString = textField.text as NSString?
         searchString = nsString?.replacingCharacters(in: range, with: string)
-        
-        searchTimer?.invalidate()
-        // Slow down the api calls
-        searchTimer = Timer(timeInterval: 0.5, target: self, selector: #selector(fireDelayedSearch(_:)), userInfo: nil, repeats: false)
-        searchTimer?.fire()
+
+        fireSearch()
         
         return true
     }

@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TastyWatchlists/ViewControllers/WatchlistsViewController.swift"
-            timestampString = "522351985.681684"
+            timestampString = "522611904.494684"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
             landmarkName = "didSelectSymbol(_:)"
             landmarkType = "7">
          </BreakpointContent>
