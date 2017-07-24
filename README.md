@@ -79,7 +79,7 @@ Sample User json response
 ]
 }
 ]
-},
+}
 '''
 
 
