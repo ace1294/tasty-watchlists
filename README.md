@@ -24,7 +24,8 @@ http://tasty-watchlist.trade:8080/user/{user_id}
 
 Sample User json response
 
-'''{
+''' json
+{
 "id": 2,
 "name": "Jason",
 "facebook_user_id": "1361761390544819",
