@@ -26,59 +26,59 @@ Sample User json response
 
 ```javascript
 {
-"id": 2,
-"name": "Jason",
-"facebook_user_id": "1361761390544819",
-"watch_lists": [
-{
-"id": 3,
-"name": "Jason first List",
-"symbols": [
-{
-"id": 3,
-"name": "AAPL"
-},
-{
-"id": 4,
-"name": "MSFT"
-},
-{
-"id": 5,
-"name": "ES"
-},
-{
-"id": 11,
-"name": "FORD"
-}
-]
-},
-{
-"id": 4,
-"name": "Hot Stocks",
-"symbols": [
-{
-"id": 6,
-"name": "AMD"
-},
-{
-"id": 7,
-"name": "NVDA"
-},
-{
-"id": 8,
-"name": "ORA"
-},
-{
-"id": 9,
-"name": "TSLA"
-},
-{
-"id": 10,
-"name": "SLRA"
-}
-]
-}
-]
+  "id": 2,
+  "name": "Jason",
+  "facebook_user_id": "1361761390544819",
+  "watch_lists": [
+    {
+    "id": 3,
+    "name": "Jason first List",
+    "symbols": [
+      {
+      "id": 3,
+      "name": "AAPL"
+      },
+      {
+      "id": 4,
+      "name": "MSFT"
+      },
+      {
+      "id": 5,
+      "name": "ES"
+      },
+      {
+      "id": 11,
+      "name": "FORD"
+      }
+     ]
+    },
+    {
+    "id": 4,
+    "name": "Hot Stocks",
+    "symbols": [
+      {
+      "id": 6,
+      "name": "AMD"
+      },
+      {
+      "id": 7,
+      "name": "NVDA"
+      },
+      {
+      "id": 8,
+      "name": "ORA"
+      },
+      {
+      "id": 9,
+      "name": "TSLA"
+      },
+      {
+      "id": 10,
+      "name": "SLRA"
+      }
+    ]
+    }
+  ]
 }
 ```
 
