@@ -24,7 +24,7 @@ http://tasty-watchlist.trade:8080/user/{user_id}
 
 Sample User json response
 
-''' json
+'''javascript
 {
 "id": 2,
 "name": "Jason",
